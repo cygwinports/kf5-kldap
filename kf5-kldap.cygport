@@ -1,0 +1,26 @@
+inherit kf5
+
+NAME="kf5-kldap"
+VERSION=16.08.3
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE LDAP library"
+DESCRIPTION="KLDAP allows LDAP accessing with a convenient Qt style C++ API."
+
+PKG_NAMES="libKF5Ldap5 libKF5Ldap-devel"
+libKF5Ldap5_CONTENTS="
+	etc/xdg/kldap.categories
+	usr/bin/cygKF5Ldap-5.dll
+	usr/lib/qt5/plugins/kf5/kio/ldap.dll
+	usr/share/doc/HTML/en/kioslave5/ldap/
+	usr/share/doc/${NAME}
+	usr/share/kservices5/ldap*.protocol
+"
+libKF5Ldap_devel_REQUIRES="libQt5Core-devel libQt5Gui-devel"
+libKF5Ldap_devel_CONTENTS="
+	usr/include/KF5/KLDAP/
+	usr/include/KF5/kldap_version.h
+	usr/lib/cmake/KF5Ldap/
+	usr/lib/libKF5Ldap.dll.a
+	usr/lib/qt5/mkspecs/modules/qt_Ldap.pri
+"
